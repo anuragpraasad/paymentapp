@@ -1,0 +1,18 @@
+const express = require('express')
+const cors = require('cors')
+const mainRouter = require("./routes/index")
+
+const app = express();
+
+app.use(express.json())
+app.use(cors())
+
+
+app.use("/api/v1", mainRouter);
+
+app.listen(3000)
+// app.get("/", function (req, res){
+//     res.status(200).json({
+//         message: "BAckend is running "
+//     })
+// })
